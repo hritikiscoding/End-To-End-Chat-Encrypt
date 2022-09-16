@@ -94,7 +94,11 @@ function decrypt(messages = [], unlockKey){
 }
 const send = (mssge) => {
   let enkeys = [];
-  var s1=toString(mssge)
+  var s1=""
+  for(let i=0;i<mssge.length;i++)
+  {
+    s1+=mssge[i]
+  }
   messageToSend = encrypt(mssge, encryptionKey);
   enkeys = decrypt(messageToSend, decryptionKey);
 //   console.log(messageToSend)
