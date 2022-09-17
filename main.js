@@ -43,8 +43,8 @@ const hckrReceive = mssge => {
   });
   let hckrCht = document.createElement("div");
   let hckrMssg = document.createElement("div");
-  hckrCht.classList.add("Bob", "chat", "chat-recieved");
-  hckrMssg.classList.add("Bob", "message-recieved");
+  hckrCht.classList.add("Bob", "chat", "chat-received");
+  hckrMssg.classList.add("Bob", "message-received");
   hckrMssg.innerText = text;
   hckrCht.appendChild(hckrMssg);
   phone2.appendChild(hckrCht);
