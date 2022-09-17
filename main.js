@@ -125,6 +125,7 @@ b1.addEventListener('click',function(){
   }
   send(meste)
   messageText=[]
+  meste=[]
 })
 
 
