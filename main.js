@@ -5,10 +5,12 @@ const decryptKey = document.querySelector(".decryptKey input");
 const phone1 = document.querySelector(".chats__phone1");
 const phone2 = document.querySelector(".chats__phone2");
 const phone3 = document.querySelector(".chats__phone3");
+const b1=document.querySelector(".send-button");
 
 var encryptionKey=0
 var decryptionKey=0
 let messageText = [];
+var meste=[]
 
 encryptKey.addEventListener('click', function() {
   encryptionKey= encryptKey.valueAsNumber;   
@@ -24,6 +26,7 @@ decryptKey.addEventListener('keyup', function() {
 });
 
 const bobSend = mssge => {
+    // console.log(mssge)
   let BobCht = document.createElement("div");
   let BobMssg = document.createElement("div");
   BobCht.classList.add("Bob", "chat", "chat-sent");
@@ -45,7 +48,7 @@ const hckrReceive = mssge => {
   hckrMssg.innerText = text;
   hckrCht.appendChild(hckrMssg);
   phone2.appendChild(hckrCht);
-  console.log(text);
+//   console.log(text);
 }
 
 const AshlyReceive = mssge => {
@@ -94,6 +97,7 @@ function decrypt(messages = [], unlockKey){
 }
 const send = (mssge) => {
   let enkeys = [];
+  console.log(mssge)
   var s1=""
   for(let i=0;i<mssge.length;i++)
   {
@@ -107,6 +111,22 @@ const send = (mssge) => {
   AshlyReceive(enkeys);
   messagebox.value = "";
 }
+var m1;
+messagebox.addEventListener('keyup', function() {
+  m1 = messagebox.value;
+  console.log(m1)
+  
+});
+b1.addEventListener('click',function(){
+  for(let i=0;i<m1.length;i++)
+  {
+    meste.push(m1[i])
+    console.log(meste)
+  }
+  send(meste)
+  messageText=[]
+})
+
 
 messagebox.addEventListener('keydown', function(e) {
   if(e.keyCode === 8){
@@ -124,6 +144,6 @@ messagebox.addEventListener('keydown', function(e) {
         messageText.push(e.key);
     }
     
-    console.log(messageText)
+    console.log(messageText) 
   }
 });
